@@ -43,6 +43,7 @@ export const Form = styled.form`
         background: #138A72;
         border: none;
         border-radius: 100px;
+        margin-bottom: 38px;
 
         color: #ffffff;
         font-weight: bold;

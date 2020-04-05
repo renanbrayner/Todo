@@ -4,7 +4,7 @@ const User = require('../models/User');
 module.exports = {
     async create(request, response) {
         try {
-            const user = await User.findOne({ name: request.body.name }).exec();
+            const user = await User.findOne({ email: request.body.email }).exec();
             if(!user) {
                 return response.status(400).send({ message: "O usuário não existe" });
             }
