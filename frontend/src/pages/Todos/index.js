@@ -16,7 +16,6 @@ import sfx from '../../assets/pop.mp3';
 function Todos() {
     const [todos, setTodos] = useState([]);
     const [text, setText] = useState('');
-    const [reload, setReload] = useState(0);
 
     const id = sessionStorage.getItem('authorization');
 
@@ -26,6 +25,10 @@ function Todos() {
     });
 
     useEffect(() => {
+        loadTodos()
+    }, [id]);
+
+    async function loadTodos() {
         api.get('todos', {
             headers: {
                 authorization: id,
@@ -33,7 +36,7 @@ function Todos() {
         }).then(response => {
             setTodos(response.data)
         })
-    }, [id, reload]);
+    }
 
     async function handleCreateTodo(e) {
         e.preventDefault();
@@ -51,7 +54,7 @@ function Todos() {
         } catch(err) {
             alert('Error creating to do, please try again.')
         }
-        setReload(reload + 1)
+        loadTodos()
     }
 
     async function handleDeleteTodo(id) {
