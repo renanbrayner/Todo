@@ -3,6 +3,7 @@ import { useFonts } from '@use-expo/font';
 import { AppLoading } from 'expo';
 import { useNavigation } from '@react-navigation/native';
 import { AsyncStorage } from 'react-native';
+
 import logoImg from '../../assets/logo.png';
 
 import api from '../../services/api';
@@ -10,6 +11,7 @@ import api from '../../services/api';
 import {
     Container,
     Logo,
+    LinkEditor,
     Form,
     Label,
     Input,
@@ -33,6 +35,10 @@ function Login() {
         navigation.navigate('Register');
     }
 
+    function navigateToEditor() {
+        navigation.navigate('Editor');
+    }
+
     async function handleLogin(){             
         try {
             let response = await api.post('/', { email, password});
@@ -51,6 +57,9 @@ function Login() {
         return (
             <Container>
                 <Logo source={logoImg} />
+                    <Link onPress={navigateToEditor}>
+                        <LinkEditor>Editor</LinkEditor>
+                    </Link>
                 <Form>
                     <Label>Email</Label>
                     <Input onChangeText={email => setEmail(email)} />

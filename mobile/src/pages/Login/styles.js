@@ -4,6 +4,7 @@ import { TouchableOpacity } from 'react-native';
 export const Container = styled.View`
     padding: 0 61px;
 
+    background-color: #fff;
     flex: 1;
     align-items: center;
     justify-content: space-around;
@@ -12,10 +13,20 @@ export const Container = styled.View`
 export const Logo = styled.Image`
     width: 140px;
     height: 140px;
+    margin-top: 90px;
+`;
+
+export const LinkEditor = styled.Text`
+    margin-left: auto;
+    font-family: montserrat-alternates-regular;
+    font-size: 15px;
+    text-decoration: underline;
+    color: #138A72;
 `;
 
 export const Form = styled.View`
     width: 100%;
+    background-color: #fff;
 `;
 
 export const Label = styled.Text`
@@ -35,7 +46,7 @@ export const Input = styled.TextInput`
 `;
 
 export const Link = styled.TouchableOpacity`
-    
+    width: 100%;
 `;
 
 export const LinkText = styled.Text`

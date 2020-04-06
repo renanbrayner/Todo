@@ -4,6 +4,7 @@ import { TouchableOpacity, FlatList } from 'react-native';
 export const Container = styled.View`
     padding: 0 52px;
 
+    background-color: #fff;
     flex: 1;
     align-items: center;
 `;
