@@ -7,7 +7,6 @@ const AppStack = createStackNavigator();
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Todos from './pages/Todos';
-import Editor from './pages/Editor';
 
 function Routes() {
     return(
@@ -16,7 +15,6 @@ function Routes() {
                 <AppStack.Screen name="Login" component={Login} />
                 <AppStack.Screen name="Register" component={Register} />
                 <AppStack.Screen name="Todos" component={Todos} />
-                <AppStack.Screen name="Editor" component={Editor} />
             </AppStack.Navigator>
         </NavigationContainer>
     );

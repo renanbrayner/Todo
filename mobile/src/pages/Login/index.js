@@ -57,9 +57,6 @@ function Login() {
         return (
             <Container>
                 <Logo source={logoImg} />
-                    <Link onPress={navigateToEditor}>
-                        <LinkEditor>Editor</LinkEditor>
-                    </Link>
                 <Form>
                     <Label>Email</Label>
                     <Input onChangeText={email => setEmail(email)} />
